@@ -75,6 +75,7 @@ function Input(props: Props): ReactElement {
         <span className={style.name}>{name}</span>
         {type === 'Date' ? <DatePicker className={style.input} placeholder='选择日期' onChange={dateCallback}/> :
           <input
+          
             className={style.input}
             type={!(type === 'password') ?
               type

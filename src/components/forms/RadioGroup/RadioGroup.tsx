@@ -15,7 +15,6 @@ interface Props {
   bind: any;
   initialData?: any;
 }
-
 function RadioGroup({ name, radioList, bind, initialData = radioList[0] }: Props): ReactElement {
   const [checkedTarget, setCheckedTarget] = useState(initialData)
   const handleChange = (e: any) => {

@@ -88,6 +88,24 @@ export const _GET_GUEST_INFO = '/guest/'; // 获取嘉宾信息(文本),{meeting
 export const _GET_GUEST_IMG = '/guestImg/'; // 获取嘉宾头像,{avatarUrl}路径
 export const MODIFY_GUEST_INFO = '/updateGuest'; // 修改嘉宾信息
 
+/**
+ * 会议司机操作接口
+ */
+
 export const ADD_DRIVER = '/addDriver'
 export const SHOW_ALL_DRIVERS = '/allDrivers'
 export const ASSIGN_DRIVER='/assignDriver'
+export const ASSIGNABLE_DRIVERS = '/assignableDrivers'
+export const REMOVE_DRIVER = '/removeDriver'
+export const DRIVER_ASSIGN_INFO = '/assignInfo'//司机和嘉宾的分配详情
+/**
+ * 房间安排接口
+ */
+export const SHOW_ALL_ROOMS = '/allRooms'
+export const ASSIGN_ROOM = '/assignRoom'
+export const ASSIGNABLE_ROOMS = '/assignableRooms'//查看可用房间信息
+export const ASSIGNED_ROOMS = '/assignedRooms'//查看所有分配信息
+export const REMOVE_ROOM = '/removeRoom'
+export const SHOW_STATISC_ROOM = '/statisticRoom'//统计房型信息
+
+

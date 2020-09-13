@@ -127,7 +127,7 @@ const config: Iroute[] =
               path: '/detail/airdetail/:meetingId',
               name: '航班详情',
               requireAuth: true,
-              component: lazy(()=> import('@/pages/Related/Detail/AirDtail'))
+              component: lazy(()=> import('@/pages/Related/Detail/AirDetail'))
             },{
               path: '/detail/roomdetail/:meetingId',
               name: '房间详情',

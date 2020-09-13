@@ -45,3 +45,19 @@ export const assignDriver = (meetingId: string, driverId: string, guestId: strin
     guestId
   },msg:'分配成功'
 })
+export const driverAssignInfo = (meetingId: string)=> post(config.DRIVER_ASSIGN_INFO, {
+  data:{
+    meetingId
+  }
+})
+export const assignableDrivers = (meetingId: string)=> post(config.ASSIGNABLE_DRIVERS, {
+  data: {
+    meetingId,
+  }
+})
+export const removeDriver = (meetingId: string, driverId: string)=> post(config.REMOVE_DRIVER, {
+  data: {
+    meetingId, 
+    driverId
+  }, msg:'删除司机成功'
+})

@@ -26,16 +26,11 @@ function Bar({num='5',guestList,callback}: Props): ReactElement {
  const { meetingId } = useParams();
  
   const JumpToDetail = ()=>{
-    console.log(pathname);
     if(pathname.includes('aircraft')){
       history.push('/detail/airdetail/'+ meetingId);
     }else if(pathname.includes('accommodation')){
       history.push('/detail/roomdetail/'+ meetingId);
-    }else{
-
     }
-    //history.push('/detail/roomdetail')
-    
  }
 
   return (
