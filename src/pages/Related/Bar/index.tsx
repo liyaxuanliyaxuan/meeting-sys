@@ -9,6 +9,8 @@ import React, { ReactElement } from 'react'
 import Guest from '@/components/commons/Guest'
 import style from './style.module.scss'
 import Button from '@/components/commons/Button'
+import { useHistory, useLocation, useParams} from 'react-router-dom'
+
 interface Props {
   num?: string;
   guestList?: {
@@ -19,11 +21,28 @@ interface Props {
 }
 
 function Bar({num='5',guestList,callback}: Props): ReactElement {
+ const history = useHistory();
+ const { pathname } = useLocation()
+ const { meetingId } = useParams();
+ 
+  const JumpToDetail = ()=>{
+    console.log(pathname);
+    if(pathname.includes('aircraft')){
+      history.push('/detail/airdetail/'+ meetingId);
+    }else if(pathname.includes('accommodation')){
+      history.push('/detail/roomdetail/'+ meetingId);
+    }else{
+
+    }
+    //history.push('/detail/roomdetail')
+    
+ }
+
   return (
     <div className={style.container}>
       <div className={style.header}>
         <div className={style.tt}>已安排嘉宾: <span>{num}</span>人</div>
-        <Button className={style.btn} value={'查看详情'} color={'rgba(253, 202, 48, 1)'}/>
+        <Button className={style.btn} onClick={JumpToDetail} value={'查看详情'} color={'rgba(253, 202, 48, 1)'}/>
       </div>
       <div className={style.list}>
         {

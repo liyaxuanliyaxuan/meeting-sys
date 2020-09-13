@@ -110,6 +110,7 @@ export const getHomeItemListByCondition = (type?: number) => get(config._SEARCH_
 /**
  * 获得会议详情
  * @param meetingId 会议id
+ * 嘉宾列表信息
  */
 export const getItemInfo = (meetingId: number) => get(config._GET_MEETING_INFO + meetingId)
 

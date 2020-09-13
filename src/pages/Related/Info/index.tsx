@@ -17,6 +17,7 @@ function Info({}: Props): ReactElement {
   return (
     <div className={style.container}>
       <InfoHeader/>
+      {/*/related/info: 包括接机和住宿跳转*/}
       <RelatedBar className={style.relatedBar} title={'会务资源安排'}/>
     </div>
   )

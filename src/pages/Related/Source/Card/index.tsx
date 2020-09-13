@@ -5,10 +5,12 @@
  * @ Description: 添加相关信息
  */
 
+ //还没有房间的接口
 import React, { ReactElement } from 'react'
 import { Iguest } from '@/services/apis/guest'
 import {Idriver} from '@/services/apis/driver'
 import Input from '@/components/forms/Input'
+import {Iroom} from '@/services/apis/room'
 import Button from '@/components/commons/Button'
 import { Spin } from 'antd'
 import Assign from '../Assign'
@@ -20,9 +22,10 @@ interface Props {
   loading?: boolean;
   guest?: Iguest;
   car?: Idriver;
+  room?: Iroom;
 }
 
-function Card({ meetingId, guest, car, loading = false }: Props): ReactElement {
+function Card({ meetingId, guest, car, room, loading = false }: Props): ReactElement {
   const showAssign=useBoolean(false)
   return (
     <Spin wrapperClassName={style.container} spinning={loading}>
@@ -42,6 +45,13 @@ function Card({ meetingId, guest, car, loading = false }: Props): ReactElement {
           <Input type='text' name='车型' readOnly value={car.carType} />
           <Input type='text' name='车牌号' readOnly value={car.carId} />
         </div>
+      )}
+      {room && (
+        <div className={style.form}>
+          <Input type='text' name='房间号' readOnly value={room.roomid}/>
+          <Input type='text' name='房间类型' readOnly value={room.roomType}/>
+          <Input type='text' name='房间价格' readOnly value={room.roomPrice}/>
+      </div>
       )}
     </Spin>
   )

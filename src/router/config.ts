@@ -13,6 +13,7 @@ import CenterLayout from '@/layouts/CenterLayout';
 import LoginLayout from '@/layouts/LoginLayout';
 import MsgLayout from '@/layouts/MsgLayout';
 import RecruitLayout from '@/layouts/RecruitLayout';
+import DetailLayout from '@/layouts/DetailLayout';
 import { Iroute } from '@/components/commons/RenderRoutes';
 
 const config: Iroute[] =
@@ -34,6 +35,7 @@ const config: Iroute[] =
             },
           ]
         },
+        //会议详情的信息，只读页面，会议信息、出席嘉宾、志愿者招募
         {
           path: '/info/:meetingId',
           exact: true,
@@ -60,6 +62,7 @@ const config: Iroute[] =
             }
           ]
         },
+        //和我相关的会议详情，包括住宿安排和接机安排
         {
           path: '/related/info/:meetingId',
           exact: true,
@@ -97,13 +100,41 @@ const config: Iroute[] =
           path: '/related',
           name: '与我相关',
           requireAuth: true,
-          component: lazy(() => import('@/pages/Related')),
+          component: lazy(()=> import('@/pages/Related'))
         },
         {
           path: '/source/:meetingId',
           name: '导入资源',
           requireAuth: true,
           component: lazy(() => import('@/pages/Related/Source'))
+          
+        },
+        //查看嘉宾详情页面
+        {
+          path: '/detail',
+          name: '详情',
+          requireAuth: true,
+          component: DetailLayout,
+          childRoutes: [
+            {
+              path: '/detail',
+              name: '默认详情页面',
+              exact: true,
+              redirect: '/related',
+              requireAuth: true,
+            },
+            {
+              path: '/detail/airdetail/:meetingId',
+              name: '航班详情',
+              requireAuth: true,
+              component: lazy(()=> import('@/pages/Related/Detail/AirDtail'))
+            },{
+              path: '/detail/roomdetail/:meetingId',
+              name: '房间详情',
+              requireAuth: true,
+              component: lazy(()=> import('@/pages/Related/Detail/RoomDetail'))
+            }
+          ]
         },
         {
           path: '/aircraft/:meetingId',

@@ -301,7 +301,7 @@ function Info({ type }: Props): ReactElement {
               </div>
             </div>
           </div>
-
+          {/*申请是否接机模态框*/}
           <Modal
             title="接机和住宿服务"
             visible={showModal}

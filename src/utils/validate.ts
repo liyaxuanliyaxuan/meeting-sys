@@ -7,7 +7,7 @@
 
 import { isNull, isEmpty } from 'lodash'
 const EMAIL = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-const PHONE = /^1[34578]\d{9}$/;
+const PHONE = /^1[3456789]\d{9}$/;
 
 export const required = (value: string) => {
   if (isNull(value) || isEmpty(value)) {

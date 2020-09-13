@@ -125,7 +125,7 @@ function Msg({ }: Props): ReactElement {
   }
   return (
     <form className={style.form} onSubmit={handleSubmit} onInput={checkValidate.run}>
-      <Input
+      <Input  
         type='text'
         placeholder='手机号/邮箱'
         msg={validateMsg.mailOrPhone.msg}
